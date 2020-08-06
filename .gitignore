@@ -1,0 +1,6 @@
+node_modules
+ips.json
+*.json
+*.html
+!package.json
+!package-lock.json
