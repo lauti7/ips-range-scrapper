@@ -8,7 +8,9 @@ const base = 'https://ipinfo.io';
 //tr Childrens = 7. [0] = /n, [1] = <a>, [2] = /n, [3] = keyword, [4] = /n, [5] = num ips, [6] = /n
 // Max Pages 12
 
-var keyword = 'Verizon Wireless'; //hardcoded
+const args = process.argv.slice(2);
+
+var keyword = args[0];
 
 function* generator($table) {
     for (let i = 1; i < $table.length; i++) {
@@ -63,7 +65,7 @@ function fetchWeb(url) {
                 .then(html => {
                     console.log('Got ip ranges html')
                     let ipsArray = [...getIpsOneHTML(html)]
-                    fs.appendFile('test_sleep.json', ipsArray.toString(), (err) => {
+                    fs.appendFile('ips_range.txt', ipsArray.toString(), (err) => {
                         console.error(err)
                     })
                 })
