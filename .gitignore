@@ -4,3 +4,4 @@ ips.json
 *.html
 !package.json
 !package-lock.json
+old.js
