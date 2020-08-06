@@ -12,7 +12,7 @@ cd ips-range-scrapper
 
 npm install
 
-node index.js
+node index.js Verizon Wireless
 ```
 
 Then, IPs are saved in ```ips_range.txt```.

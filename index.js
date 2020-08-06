@@ -10,7 +10,7 @@ const base = 'https://ipinfo.io';
 
 const args = process.argv.slice(2);
 
-var keyword = args[0];
+var keyword = args.length > 1 ? `${args[0]} ${args[1]}` : args[0]
 
 function* generator($table) {
     for (let i = 1; i < $table.length; i++) {
@@ -97,4 +97,4 @@ function main() {
     }
 }
 
-main()
+// main()
